@@ -3,6 +3,9 @@
 // Copyright (c) 2012, Mihail Szabolcs
 // MIT license, for more information see LICENSE.
 //
+if(typeof require == "function")
+  require("src/papergame.js");
+
 var PaperBalloon = 
 { 
   w: 1102, 

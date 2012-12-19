@@ -135,10 +135,11 @@ PaperGame.Graphics = _(
     this.w = w;
     this.h = h;
     this.canvas = PaperGame.createEl("canvas");
-    this.ctx = this.canvas.getContext("2d");
     this.canvas.width = w;
     this.canvas.height= h;
-    
+    this.canvas.style.backgroundColor = "#000000";
+    this.ctx = this.canvas.getContext("2d");
+  
     if(!buffer)
       PaperGame.appendChild(document.body, this.canvas); // remove this non-sense!
   },
@@ -189,11 +190,11 @@ PaperGame.Graphics = _(
   },
   clear: function(color)
   {
-    this.ctx.save();
     this.ctx.setTransform(1, 0, 0, 1, 0, 0);
-    this.drawRect(0, 0, this.canvas.width, this.canvas.height, color || "#FFFFFF");
-    //this.ctx.clearRect(0, 0, this.canvas.width, this.canvas.height);
-    this.ctx.restore();
+    this.ctx.clearRect(0, 0, this.canvas.width, this.canvas.height);
+    //this.ctx.save();
+    //this.drawRect(0, 0, this.canvas.width, this.canvas.height, color || "#FFFFFF");
+    //this.ctx.restore();
   },
   setPixels: function(pixels)
   {
@@ -286,7 +287,7 @@ PaperGame.Resources = _(
     // FIXME: BUGGGGGGYYY BUGGGYYY BUGGGYYYY .... YUCK!!!
     audio.addEventListener('loadedmetadata', function()
     {
-      PaperGame.log('Loaded audio:' + this.src);
+      PaperGame.log('Loaded audio: ' + this.src);
       this.loaded = true;
       self.loading--;
     }, false);
@@ -325,7 +326,7 @@ PaperGame.Resources = _(
     var image = new Image();
     image.onload = function()
     {
-      PaperGame.log('Loaded image:' + this.src);
+      PaperGame.log('Loaded image: ' + this.src);
       this.loaded = true;
       self.loading--;
     };
