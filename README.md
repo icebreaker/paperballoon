@@ -27,6 +27,7 @@ However, the music and sound effects have been gathered from various sources:
 * http://soundcloud.com/ramahill/lost-in-egypt
 * http://soundcloud.com/andyrobison/the-gathering-of-spirits
 * http://soundcloud.com/randomcarpark/crescent
+* https://soundcloud.com/arkhangeluz/diane-david-arkenstone-egypt
 
 License
 -------
